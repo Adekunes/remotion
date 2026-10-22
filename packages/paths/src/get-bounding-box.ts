@@ -17,7 +17,8 @@ function minmaxQ(A: [number, number, number]): minMax {
 	const min = Math.min(A[0], A[2]);
 	const max = Math.max(A[0], A[2]);
 
-	if (A[1] > A[0] ? A[2] >= A[1] : A[2] <= A[1]) {
+	// If A[1] === A[0], the only extremum is at t = 0, which is already covered
+	if (A[1] === A[0] || (A[1] > A[0] ? A[2] >= A[1] : A[2] <= A[1])) {
 		// if no extremum in ]0,1[
 		return [min, max];
 	}
